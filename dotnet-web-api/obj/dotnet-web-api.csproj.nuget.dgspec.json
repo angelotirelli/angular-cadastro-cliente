@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Git\\angular-cadastro-cliente\\dotnet-web-api\\dotnet-web-api.csproj": {}
+    "C:\\Git\\angular-cadastro-cliente\\dotnet-web-api\\dotnet-web-api.csproj": {}
   },
   "projects": {
-    "c:\\Git\\angular-cadastro-cliente\\dotnet-web-api\\dotnet-web-api.csproj": {
+    "C:\\Git\\angular-cadastro-cliente\\dotnet-web-api\\dotnet-web-api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Git\\angular-cadastro-cliente\\dotnet-web-api\\dotnet-web-api.csproj",
+        "projectUniqueName": "C:\\Git\\angular-cadastro-cliente\\dotnet-web-api\\dotnet-web-api.csproj",
         "projectName": "dotnet-web-api",
-        "projectPath": "c:\\Git\\angular-cadastro-cliente\\dotnet-web-api\\dotnet-web-api.csproj",
+        "projectPath": "C:\\Git\\angular-cadastro-cliente\\dotnet-web-api\\dotnet-web-api.csproj",
         "packagesPath": "C:\\Users\\angel\\.nuget\\packages\\",
-        "outputPath": "c:\\Git\\angular-cadastro-cliente\\dotnet-web-api\\obj\\",
+        "outputPath": "C:\\Git\\angular-cadastro-cliente\\dotnet-web-api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\angel\\AppData\\Roaming\\NuGet\\NuGet.Config"

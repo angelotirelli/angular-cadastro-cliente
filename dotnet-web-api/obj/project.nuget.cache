@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ThPccQ0AwoH/53rJBQ0cNEA4qcZbKKSvEYlKJLOH7LOyg9XVjenALgTRZlGcWwbp2kiS/6ozDS9bjOG2FOhQ0Q==",
+  "dgSpecHash": "9ZScJPcEljoKqcbAu4FmBxPy/ZIswy8BSLsZqNKDFNnqWZEt8RabW2+o39egoRLHdbqHUW7oSao3C6noQxTXfg==",
   "success": true,
-  "projectFilePath": "c:\\Git\\angular-cadastro-cliente\\dotnet-web-api\\dotnet-web-api.csproj",
+  "projectFilePath": "C:\\Git\\angular-cadastro-cliente\\dotnet-web-api\\dotnet-web-api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\angel\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\angel\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

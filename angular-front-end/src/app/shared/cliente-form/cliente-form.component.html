@@ -1,23 +1,38 @@
-<h1>Cadastrar Cliente</h1>
-<form [formGroup]="clienteForm" (ngSubmit)="submit()" #formDit="ngForm">
-  <div class="input-box">
-    <label for="nome"></label>
-    <input type="text" formControlName="nome" placeholder="Digite o nome completo" required>
+<mat-card>
+  <div>
+    <mat-card-title style="color: white;">{{btnTitulo}}</mat-card-title>
+    <mat-card-subtitle>Digite os dados do cliente</mat-card-subtitle>
   </div>
-  <div class="input-box">
-    <label for="email"></label>
-    <input type="text" formControlName="email" placeholder="Digite o e-mail de contato" required>
-  </div>
-  <div class="input-box">
-    <label for="dataNascimento"></label>
-    <input type="text" formControlName="dataNascimento" placeholder="Digite a data de nascimento">
-  </div>
-  <div class="input-box">
-    <label for="cep"></label>
-    <input type="text" formControlName="cep" placeholder="Digite o CEP do endereço para pesquisa" required>
-  </div>
-  <div class="btn-box">
-    <button type="submit">Cadastrar</button>
-    <button type="submit" routerLink="">Voltar</button>
-  </div>
-</form>
+  <form [formGroup]="clienteForm" (ngSubmit)="submit()" #formDit="ngForm">
+    <input type="hidden" formControlName="id">
+
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label for="nome">Nome</mat-label>
+        <input matInput type="text" formControlName="nome" placeholder="Digite o nome completo" required>
+      </mat-form-field>
+    </div>
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label for="email">e-mail</mat-label>
+        <input matInput type="email" formControlName="email" placeholder="Digite o e-mail de contato" required>
+      </mat-form-field>
+    </div>
+    <div class="input-box">
+      <mat-form-field>
+      <mat-label for="dataNascimento">Data de Nascimento</mat-label>
+      <input matInput type="text" formControlName="dataNascimento" placeholder="Digite a data de nascimento">
+    </mat-form-field>
+    </div>
+    <div class="input-box">
+    <mat-form-field>
+      <mat-label for="cep">CEP</mat-label>
+      <input matInput type="text" formControlName="cep" placeholder="Digite o CEP do endereço para pesquisa" required>
+    </mat-form-field>
+    </div>
+    <div class="btn-box">
+      <button mat-raised-button color="accent" type="submit" [disabled]="!clienteForm.valid">{{btnAcao}}</button>
+      <button mat-raised-button type="submit" routerLink="">Voltar</button>
+    </div>
+  </form>
+</mat-card>

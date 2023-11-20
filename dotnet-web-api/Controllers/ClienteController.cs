@@ -39,13 +39,13 @@ namespace dotnet_web_api.Controllers
             return Ok(await _clienteInterface.UpdateCliente(clienteEditado));
         }
 
-        [HttpPut("inativar")]
+        [HttpPut("inativar/{id}")]
         public async Task<ActionResult<ServiceResponse<List<ClienteModel>>>> InativaCLiente(int id)
         {
             return Ok(await _clienteInterface.InativaCliente(id));
         }
 
-        [HttpDelete("apagar")]
+        [HttpDelete("apagar/{id}")]
         public async Task<ActionResult<ServiceResponse<List<ClienteModel>>>> DeleteCliente(int id)
         {
             return Ok(await _clienteInterface.DeleteCliente(id));

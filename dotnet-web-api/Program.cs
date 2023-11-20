@@ -14,6 +14,7 @@ internal class Program
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+        builder.Services.AddCors();
         builder.Services.AddScoped<IClienteInterface, ClienteService>();
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
         {
@@ -22,14 +23,25 @@ internal class Program
 
         var app = builder.Build();
 
-        // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
-        {
-            app.UseSwagger();
-            app.UseSwaggerUI();
-        }
+        // // Configure the HTTP request pipeline.
+        // if (app.Environment.IsDevelopment())
+        // {
+        //     app.UseSwagger();
+        //     app.UseSwaggerUI();
+        // }
+
+        app.UseSwagger();
+
+        app.UseSwaggerUI();
 
         app.UseHttpsRedirection();
+
+        app.UseCors(c =>
+        {
+            c.AllowAnyHeader();
+            c.AllowAnyMethod();
+            c.AllowAnyOrigin();
+        });
 
         app.UseAuthorization();
 
