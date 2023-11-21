@@ -11,16 +11,14 @@ body {
 }
 
 mat-card {
-  width: 800px;
+  width: 70%;
   height: 100%;
   display: flex;
   justify-content: first baseline;
   align-items: center;
   margin: 0 auto;
-  margin-top: 1rem;
   padding: 3rem;
-  margin-top: 5rem;
-
+  margin-top: 1rem;
 }
 
 mat-form-field {

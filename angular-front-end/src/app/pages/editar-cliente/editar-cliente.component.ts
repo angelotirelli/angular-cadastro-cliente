@@ -10,7 +10,7 @@ import { ClienteService } from 'src/app/services/cliente.service';
 })
 export class EditarClienteComponent implements OnInit {
 
-  btnAcao = "Editar";
+  btnAcao = "Gravar";
   btnTitulo = "Editar cliente";
   dadosCliente!: Cliente;
 

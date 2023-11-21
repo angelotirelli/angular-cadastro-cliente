@@ -30,6 +30,10 @@ export class ClienteService {
   }
 
   inativaCliente(id: number) : Observable<Response<Cliente[]>> {
-    return this.http.get<Response<Cliente[]>>(`${this.apiClienteUrl}/inativa/${id}`);
+    return this.http.put<Response<Cliente[]>>(`${this.apiClienteUrl}/inativar/${id}`, id);
+  }
+
+  excluirCliente(id: number) : Observable<Response<Cliente[]>> {
+    return this.http.delete<Response<Cliente[]>>(`${this.apiClienteUrl}/apagar/${id}`);
   }
 }

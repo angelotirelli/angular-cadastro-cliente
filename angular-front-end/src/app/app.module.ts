@@ -9,11 +9,17 @@ import { ClienteFormComponent } from './shared/cliente-form/cliente-form.compone
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditarClienteComponent } from './pages/editar-cliente/editar-cliente.component';
+import { DetalhesClienteComponent } from './pages/detalhes-cliente/detalhes-cliente.component';
+
 /* Angular Material */
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
-import { DetalhesClienteComponent } from './pages/detalhes-cliente/detalhes-cliente.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ExcluirComponent } from './components/excluir/excluir.component';
+
+
 
 @NgModule({
   declarations: [
@@ -23,6 +29,7 @@ import { DetalhesClienteComponent } from './pages/detalhes-cliente/detalhes-clie
     ClienteFormComponent,
     EditarClienteComponent,
     DetalhesClienteComponent,
+    ExcluirComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +40,9 @@ import { DetalhesClienteComponent } from './pages/detalhes-cliente/detalhes-clie
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

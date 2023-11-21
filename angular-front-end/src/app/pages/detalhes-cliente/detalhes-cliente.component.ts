@@ -26,8 +26,8 @@ export class DetalhesClienteComponent implements OnInit {
 
   }
 
-  inativaCliente(cliente: Cliente) {
-    this.clienteService.editarCliente(cliente).subscribe((data) => {
+  inativaCliente() {
+    this.clienteService.inativaCliente(this.id).subscribe((data) => {
       this.router.navigate(['']);
     })
   }

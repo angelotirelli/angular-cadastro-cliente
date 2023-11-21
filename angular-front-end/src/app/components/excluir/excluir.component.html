@@ -1,0 +1,16 @@
+<mat-card class="card-modal">
+<div *ngIf="cliente">
+  <h2>Deseja confirmar a exclusão?</h2>
+  <div>
+    <p>Cliente: {{cliente.id}}</p>
+    <p>Nome: {{cliente.nome}}</p>
+    <p>e-mail: {{cliente.email}}</p>
+  </div>
+  <div class="btn-box">
+    <button mat-raised-button color="warn" (click)="excluirCliente()">Confirmar Exclusão</button>
+  </div>
+  <div class="btn-box">
+    <button mat-raised-button (click)="cancelarExclusao()" >Voltar</button>
+  </div>
+</div>
+</mat-card>

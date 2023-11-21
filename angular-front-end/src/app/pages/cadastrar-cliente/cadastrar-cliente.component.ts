@@ -10,7 +10,7 @@ import { ClienteService } from 'src/app/services/cliente.service';
 })
 export class CadastrarClienteComponent {
 
-  btnAcao = "Cadatrar";
+  btnAcao = "Gravar";
   btnTitulo = "Cadastrar Cliente"
 
   constructor(private clienteService: ClienteService, private router: Router) { }
