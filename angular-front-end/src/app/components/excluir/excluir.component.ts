@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { Cliente } from 'src/app/models/cliente';
+import { ClienteModel } from 'src/app/models/cliente';
 import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { ClienteService } from 'src/app/services/cliente.service';
 export class ExcluirComponent implements OnInit{
 
   inputData: any;
-  cliente!: Cliente;
+  cliente!: ClienteModel;
 
   constructor(private clienteService: ClienteService,
               private router: Router,

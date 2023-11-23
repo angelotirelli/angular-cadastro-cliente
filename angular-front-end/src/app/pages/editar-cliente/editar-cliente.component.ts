@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { Cliente } from 'src/app/models/cliente';
+import { ClienteModel } from 'src/app/models/cliente';
 import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
@@ -12,7 +12,7 @@ export class EditarClienteComponent implements OnInit {
 
   btnAcao = "Gravar";
   btnTitulo = "Editar cliente";
-  dadosCliente!: Cliente;
+  dadosCliente!: ClienteModel;
 
   constructor(private clienteService: ClienteService, private route: ActivatedRoute, private router: Router) {}
 
@@ -25,7 +25,7 @@ export class EditarClienteComponent implements OnInit {
     })
   }
 
-  editarCliente(cliente: Cliente) {
+  editarCliente(cliente: ClienteModel) {
     this.clienteService.editarCliente(cliente).subscribe((data) => {
       this.router.navigate(['/']);
     })

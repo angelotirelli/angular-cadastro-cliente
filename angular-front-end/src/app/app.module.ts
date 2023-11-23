@@ -10,6 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditarClienteComponent } from './pages/editar-cliente/editar-cliente.component';
 import { DetalhesClienteComponent } from './pages/detalhes-cliente/detalhes-cliente.component';
+import { ErrorStateMatcher } from '@angular/material/core';
+import { CustomErrorStateMatcher } from './resources/custom-state-matcher';
 
 /* Angular Material */
 import { MatButtonModule } from '@angular/material/button';
@@ -18,6 +20,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ExcluirComponent } from './components/excluir/excluir.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+
 
 
 
@@ -42,9 +47,11 @@ import { ExcluirComponent } from './components/excluir/excluir.component';
     MatCardModule,
     MatInputModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatIconModule
   ],
-  providers: [],
+  providers: [{provide: ErrorStateMatcher, useClass: CustomErrorStateMatcher}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

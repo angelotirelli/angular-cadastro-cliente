@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Cliente } from 'src/app/models/cliente';
+import { ClienteModel } from 'src/app/models/cliente';
 import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class CadastrarClienteComponent {
 
   constructor(private clienteService: ClienteService, private router: Router) { }
 
-  createCliente(cliente: Cliente) {
+  createCliente(cliente: ClienteModel) {
     this.clienteService.createCliente(cliente).subscribe((data =>{
       this.router.navigate(['/']);
     }))

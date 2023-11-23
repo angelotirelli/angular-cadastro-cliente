@@ -5,17 +5,18 @@
   </div>
   <form [formGroup]="clienteForm" (ngSubmit)="submit()" #formDit="ngForm">
     <input type="hidden" formControlName="id">
-
     <div class="input-box">
       <mat-form-field>
         <mat-label for="nome">Nome</mat-label>
-        <input matInput type="text" formControlName="nome" placeholder="Digite o nome completo" required>
+        <input matInput [errorStateMatcher]="customErrorStatematcher" formControlName="nome" type="text" placeholder="Digite o nome completo" required>
+        <mat-error>Campo obrigatório</mat-error>
       </mat-form-field>
     </div>
     <div class="input-box">
       <mat-form-field>
         <mat-label for="email">e-mail</mat-label>
-        <input matInput type="email" formControlName="email" placeholder="Digite o e-mail de contato" required>
+        <input matInput type="email" formControlName="email" placeholder="Digite o e-mail - Ex. pessoa@dominio.com" required>
+        <mat-error>Campo obrigatório</mat-error>
       </mat-form-field>
     </div>
     <div class="input-box">
@@ -27,8 +28,69 @@
     <div class="input-box">
     <mat-form-field>
       <mat-label for="cep">CEP</mat-label>
-      <input matInput type="text" formControlName="cep" placeholder="Digite o CEP do endereço para pesquisa" required>
+      <input matInput type="text" formControlName="cep" placeholder="Digite o CEP e pressione enter para pesquisar" required>
+      <mat-error>Campo obrigatório</mat-error>
     </mat-form-field>
+    </div>
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label for="logradouro">Logradouro</mat-label>
+        <input matInput type="text" formControlName="logradouro" placeholder="Digite o endereço" required>
+        <mat-error>Campo obrigatório</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label for="numero">Número</mat-label>
+        <input matInput type="text" formControlName="numero" placeholder="Digite o numnero" required>
+        <mat-error>Campo obrigatório</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label for="complemento">Complemento</mat-label>
+        <input matInput type="text" formControlName="complemento" placeholder="Digite o complemento do endereço">
+      </mat-form-field>
+    </div>
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label for="bairro">Bairro</mat-label>
+        <input matInput type="text" formControlName="bairro" placeholder="Digite o bairro" required>
+        <mat-error>Campo obrigatório</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label for="cidade">Cidade</mat-label>
+        <input matInput type="text" formControlName="cidade" placeholder="Digite a cidade" required>
+        <mat-error>Campo obrigatório</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label for="uf">Sigla do Estado</mat-label>
+        <input matInput type="text" formControlName="uf" placeholder="Digite a sigla do estado" required>
+        <mat-error>Campo obrigatório</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label for="codigoIbge">Codigo da Cidade IBGE</mat-label>
+        <input matInput type="text" formControlName="codigoIbge" placeholder="Digite o codigo da cidade IBGE" required>
+        <mat-error>Campo obrigatório</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label for="ddd">DDD</mat-label>
+        <input matInput type="text" formControlName="ddd" placeholder="Digite o DDD">
+      </mat-form-field>
+    </div>
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label for="telefone">Telefone</mat-label>
+        <input matInput type="text" formControlName="telefone" placeholder="Digite o telefone">
+      </mat-form-field>
     </div>
     <div class="btn-box">
       <button mat-raised-button color="accent" type="submit" [disabled]="!clienteForm.valid">{{btnAcao}}</button>

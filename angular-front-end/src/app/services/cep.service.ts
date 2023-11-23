@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
-import { Cep } from '../models/cep';
-import { Response } from '../models/response';
+import { CepModel } from '../models/cep';
+import { ResponseModel } from '../models/response';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -15,8 +15,8 @@ export class CepService {
 
   constructor( private http: HttpClient) { }
 
-  getCep(cepDigitado: String = "01001000") : Observable<Response<Cep>> {
-    return this.http.get<Response<Cep>>(`${this.apiCep}${cepDigitado}/json`);
+  getCep(cepDigitado: String = '01001000') : Observable<CepModel> {
+    return this.http.get<CepModel>(`${this.apiCep}${cepDigitado}/json`);
   };
 
 }

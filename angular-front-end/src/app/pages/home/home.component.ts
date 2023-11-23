@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ExcluirComponent } from 'src/app/components/excluir/excluir.component';
-import { Cep } from 'src/app/models/cep';
-import { Cliente } from 'src/app/models/cliente';
+import { CepModel } from 'src/app/models/cep';
+import { ClienteModel } from 'src/app/models/cliente';
 import { CepService } from 'src/app/services/cep.service';
 import { ClienteService } from 'src/app/services/cliente.service';
 
@@ -14,9 +14,9 @@ import { ClienteService } from 'src/app/services/cliente.service';
 })
 export class HomeComponent  implements OnInit{
 
-  cep!: Cep;
-  clientes: Cliente[] = [];
-  clientesGeral: Cliente[] = [];
+  cep!: CepModel;
+  clientes: ClienteModel[] = [];
+  clientesGeral: ClienteModel[] = [];
   colunas = ['Ativo', 'Nome', 'e-mail', 'Data de Nascimento', 'CEP', 'Editar', 'Excluir']
 
   constructor (private cepService: CepService, private clienteService: ClienteService, private dialog: MatDialog) {}

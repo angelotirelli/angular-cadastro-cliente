@@ -1,6 +1,7 @@
-export interface Cep {
+export interface CepModel {
   cep: String;
   logradouro: String;
+  numero: String;
   complemento: String;
   bairro: String;
   localidade: String;
