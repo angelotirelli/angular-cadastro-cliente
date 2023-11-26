@@ -11,7 +11,7 @@ import { ClienteService } from 'src/app/services/cliente.service';
 export class CadastrarClienteComponent {
 
   btnAcao = "Gravar";
-  btnTitulo = "Cadastrar Cliente"
+  btnTitulo = "Cadastrar Cliente";
 
   constructor(private clienteService: ClienteService, private router: Router) { }
 
@@ -20,5 +20,6 @@ export class CadastrarClienteComponent {
       this.router.navigate(['/']);
     }))
   }
+
 
 }

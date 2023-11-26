@@ -23,7 +23,7 @@ import { ExcluirComponent } from './components/excluir/excluir.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 
-
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 
 
 @NgModule({
@@ -49,9 +49,11 @@ import { MatIconModule } from '@angular/material/icon';
     MatTableModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    NgxMaskDirective
   ],
-  providers: [{provide: ErrorStateMatcher, useClass: CustomErrorStateMatcher}],
+  providers: [{provide: ErrorStateMatcher, useClass: CustomErrorStateMatcher},
+               provideNgxMask()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

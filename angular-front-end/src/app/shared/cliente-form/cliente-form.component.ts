@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { CepModel } from 'src/app/models/cep';
 import { ClienteModel } from 'src/app/models/cliente';
 import { CustomErrorStateMatcher } from 'src/app/resources/custom-state-matcher';
 import { CepService } from 'src/app/services/cep.service';
@@ -10,7 +11,6 @@ import { CepService } from 'src/app/services/cep.service';
   styleUrls: ['./cliente-form.component.css'],
 })
 export class ClienteFormComponent implements OnInit{
-
   /* envia dados do formulario para persistir*/
   @Output() onSubmit = new EventEmitter<ClienteModel>();
 
@@ -20,19 +20,20 @@ export class ClienteFormComponent implements OnInit{
 
   @Input() dadosCliente: ClienteModel | null = null;
 
-  @Input() cepDigitado: String = '';
+
 
   clienteForm!: FormGroup;
+  dadosCep!: CepModel;
 
   customErrorStatematcher = new CustomErrorStateMatcher();
 
-  constructor (private cepService: CepService) {}
+  constructor (private formBuilder: FormBuilder, private cepService: CepService) {}
 
   ngOnInit(): void {
-    this.clienteForm = new FormGroup({
+    this.clienteForm = this.formBuilder.group({
       id:             new FormControl(this.dadosCliente? this.dadosCliente.id             : 0),
       nome:           new FormControl(this.dadosCliente? this.dadosCliente.nome           : '', Validators.required),
-      email:          new FormControl(this.dadosCliente? this.dadosCliente.email          : '', Validators.required),
+      email:          new FormControl(this.dadosCliente? this.dadosCliente.email          : '', Validators.email),
       dataNascimento: new FormControl(this.dadosCliente? this.dadosCliente.dataNascimento : '' ),
       cep:            new FormControl(this.dadosCliente? this.dadosCliente.cep            : '', Validators.required),
       logradouro:     new FormControl(this.dadosCliente? this.dadosCliente.logradouro     : '', Validators.required),
@@ -52,23 +53,29 @@ export class ClienteFormComponent implements OnInit{
     this.onSubmit.emit(this.clienteForm.value);
   }
 
-  searchCEO() {
-
-  }
-  buscarEndereco(cep: String) {
-    this.cepService.getCep(cep).subscribe((data) =>{
-      if(data != null && this.dadosCliente != null) {
-        this.dadosCliente.logradouro   = data.logradouro;
-        this.dadosCliente.numero       = data.numero;
-        this.dadosCliente.complemento  = data.complemento;
-        this.dadosCliente.bairro       = data.bairro;
-        this.dadosCliente.cidade       = data.localidade;
-        this.dadosCliente.uf           = data.uf;
-        this.dadosCliente.codigoIbge   = data.ibge;
-        this.dadosCliente.ddd          = data.ddd;
-      }
-    });
+  consultaCep(cepDigitado: any) {
+    if (cepDigitado) {
+      this.cepService.getCep(cepDigitado).subscribe((dados) => {
+        this.popularEndereco(dados);
+      });
+    }
   }
 
+  popularEndereco(dados: CepModel) {
+    this.clienteForm.patchValue({
+      cep: dados.cep,
+      logradouro: dados.logradouro,
+      numero: dados.numero,
+      complemento: dados.complemento,
+      bairro: dados.bairro,
+      cidade: dados.localidade,
+      uf: dados.uf,
+      codigoIbge: dados.ibge,
+      gia: dados.gia,
+      ddd: dados.ddd,
+      siafi: dados.siafi
+    })
+
+  }
 
 }

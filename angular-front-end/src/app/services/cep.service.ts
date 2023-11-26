@@ -15,7 +15,7 @@ export class CepService {
 
   constructor( private http: HttpClient) { }
 
-  getCep(cepDigitado: String = '01001000') : Observable<CepModel> {
+  getCep(cepDigitado: String) : Observable<CepModel> {
     return this.http.get<CepModel>(`${this.apiCep}${cepDigitado}/json`);
   };
 
